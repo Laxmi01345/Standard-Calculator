@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+.container{
+   border: 2px solid black;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1%;
+    margin: 4%;
+    transition: background-color 0.3s ease-in-out;
+    background-color: rgb(224, 224, 135);
+    
+    border-radius: 2%;
+
+}
+
+.address{
+    padding: 3%;
+    width: 18%;
+    margin: 2%;
+    font-size: 2em;
+    border-radius: 9%;
+}
+
+.container input{
+    border: 2px solid black;
+    width: 80%;
+    padding: 2%;
+    margin: 2%;
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+label{
+    width: 100px;
+    height: 50px;
+    margin: 1%;
+    position: relative;
+    display: block;
+    background: rgb(247, 246, 244);
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0,0, 0, 0.4) , inset 0px -5px 15px rgb(247, 246, 244,0.5);
+    cursor: pointer;
+    transition: 0.3s;
+}
+label:after{
+    content: "";
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    background: linear-gradient(#ffcc89,#d88609);
+    border-radius: 45px;
+    box-shadow: 0pc 5px 10px rgba(0,0, 0, 0.42);
+    transition: 0.3s;
+}
+
+.darkmode input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    
+
+}
+
+.darkmode input:checked+label{
+    background: black;
+}
+
+.darkmode input:checked+label:after{
+    left: 53px;
+    
+    background: linear-gradient(180deg,#777,#3a3a3a);
+}

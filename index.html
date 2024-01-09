@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+
+</head>
+<body>
+    <div class="darkmode"><input type="checkbox" id="switch" class="checkbox" onclick="change()">
+        <label for="switch" class="toggle"></label></div>
+    
+    <div class="container">
+        
+        <input type="text" id="display" readonly>
+   
+        <div class="keys">
+            <button class="address" onclick="curr_display='';
+            document.querySelector('#display').value=curr_display;
+            ">AC</button>
+            <button class="address" onclick=" 
+            if (curr_display==0){
+                curr_display=0;
+            }
+            else{
+                curr_display=curr_display.substring(0,curr_display.length-1);
+            }
+            document.querySelector('#display').value=curr_display;
+            
+            ">CE</button>
+            <button class="address" onclick="
+            if (curr_display==0) {curr_display=0}
+            else if (curr_display.charAt(curr_display.length-1)!='+' && curr_display.charAt(curr_display.length-1)!='-' && curr_display.charAt(curr_display.length-1)!='/' && curr_display.charAt(curr_display.length-1)!='/' && curr_display.charAt(curr_display.length-1)!='%'){
+                curr_display=curr_display+'%';
+            }
+            document.querySelector('#display').value=curr_display;
+            ">%</button>
+            <button class="address" onclick="
+            if (curr_display==0) {curr_display=0}
+            else if (curr_display.charAt(curr_display.length-1)!='+' && curr_display.charAt(curr_display.length-1)!='-' && curr_display.charAt(curr_display.length-1)!='/' && curr_display.charAt(curr_display.length-1)!='/' && curr_display.charAt(curr_display.length-1)!='%'){
+                curr_display=curr_display+'/';
+            }
+            document.querySelector('#display').value=curr_display;
+            "><i class="fa-solid fa-divide"></i></button>
+            
+        </div>
+        <div class="keys">
+            <button class="address" onclick="curr_display=curr_display+'7';
+            document.querySelector('#display').value=curr_display;
+            ">7</button>
+            <button class="address" onclick="curr_display=curr_display+'8';
+            document.querySelector('#display').value=curr_display;
+            ">8</button>
+            <button class="address" onclick="curr_display=curr_display+'9';
+            document.querySelector('#display').value=curr_display;
+            ">9</button>
+            <button class="address" onclick="
+            if (curr_display==0) {curr_display=0}
+            else if (curr_display.charAt(curr_display.length-1)!='+' && curr_display.charAt(curr_display.length-1)!='-' && curr_display.charAt(curr_display.length-1)!='/' && curr_display.charAt(curr_display.length-1)!='/' && curr_display.charAt(curr_display.length-1)!='%'){
+                curr_display=curr_display+'*';
+            }
+            document.querySelector('#display').value=curr_display;
+            ">X</button>
+        </div>
+
+        <div class="keys">
+            <button class="address" onclick="curr_display=curr_display+'4';
+            document.querySelector('#display').value=curr_display;
+            ">4</button>
+            <button class="address" onclick="curr_display=curr_display+'5';
+            document.querySelector('#display').value=curr_display;
+            ">5</button>
+            <button class="address" onclick="curr_display=curr_display+'6';
+            document.querySelector('#display').value=curr_display;
+            ">6</button>
+            <button class="address" onclick="
+            if (curr_display==0) {curr_display=0}
+            else if (curr_display.charAt(curr_display.length-1)!='+' && curr_display.charAt(curr_display.length-1)!='-' && curr_display.charAt(curr_display.length-1)!='/' && curr_display.charAt(curr_display.length-1)!='*' && curr_display.charAt(curr_display.length-1)!='%'){
+                curr_display=curr_display+'-';
+            }
+            document.querySelector('#display').value=curr_display;
+            "><i class="fa-sharp fa-solid fa-minus"></i></button>
+        </div>
+
+        <div class="keys">
+            <button class="address" onclick="curr_display=curr_display+'1';
+            document.querySelector('#display').value=curr_display;
+            ">1</button>
+            <button class="address" onclick="curr_display=curr_display+'2';
+            document.querySelector('#display').value=curr_display;
+            ">2</button>
+            <button class="address" onclick="curr_display=curr_display+'3';
+            document.querySelector('#display').value=curr_display;
+            ">3</button>
+            <button class="address"  onclick="
+            if (curr_display==0) {curr_display=0}
+            else if (curr_display.charAt(curr_display.length-1)!='+' && curr_display.charAt(curr_display.length-1)!='-' && curr_display.charAt(curr_display.length-1)!='/' && curr_display.charAt(curr_display.length-1)!='/' && curr_display.charAt(curr_display.length-1)!='%'){
+                curr_display=curr_display+'+';
+            }
+            document.querySelector('#display').value=curr_display;
+            "><i class="fa-sharp fa-solid fa-plus"></i></button>
+        </div>
+
+
+        <div class="keys">
+            <button class="address" onclick="curr_display=-curr_display;
+            document.querySelector('#display').value=curr_display">+/-</button>
+            <button class="address" onclick="curr_display=curr_display+'0';
+            document.querySelector('#display').value=curr_display;
+            ">0</button>
+            <button class="address">.</button>
+            <button class="address" onclick="
+            let result=eval(curr_display);
+            if (curr_display==0){
+                curr_display=0;
+            }
+            else{
+                curr_display=result;
+            }
+            document.querySelector('#display').value=curr_display;
+            "><i class="fa-sharp fa-solid fa-equals"></i></button>
+        </div>
+    </div>
+    <script >
+        let curr_display='';
+
+    </script>
+
+    <script src="index.js"></script>
+</body>
+</html>
